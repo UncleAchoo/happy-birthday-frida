@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Doors Along the Way</title>
+<title>Happy Birthday, Frida!</title>
 <meta name="description" content="Happy Birthday, Frida!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,6 +142,11 @@ body.dark-big #bigText{color:var(--ink)}
 @keyframes blink{50%{opacity:0}}
 #title h1{min-height:1em}
 #title.show h1{transition-duration:.7s,.7s,.7s}
+#title p#titleSub{font:700 clamp(17px,2.4vw,24px)/1.35 var(--ui);max-width:30ch;margin:18px auto 0;opacity:0;transform:translateY(8px);transition:opacity 1.2s ease,transform 1.2s ease}
+#title.show p#titleSub.in{opacity:1;transform:none}
+#credit{position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 1.4vh);z-index:9;display:flex;gap:7px;align-items:center;justify-content:center;font:700 14px var(--ui);letter-spacing:.04em;color:#fff;opacity:0;transition:opacity 1.2s ease 1s;pointer-events:none}
+#credit.show{opacity:.92}
+#credit svg{flex:none}
 @media (min-aspect-ratio: 5/4){#wish{bottom:calc(6vh + 8px);padding:12px 22px 14px;width:min(700px,calc(100vw - 32px))} #wishTitle{font-size:clamp(26px,3.4vw,44px)} #wishLove{margin-top:6px;font-size:clamp(15px,1.7vw,20px)} #wishSun{margin-top:4px;font-size:clamp(13px,1.4vw,16px)}}
 
 /* touch */
@@ -162,9 +167,10 @@ body.dark-big #bigText{color:var(--ink)}
 </style>
 </head>
 <body>
-<canvas id="c" aria-label="Doors Along the Way, a 3D journey"></canvas>
+<canvas id="c" aria-label="Happy Birthday, Frida! A 3D journey"></canvas>
 
-<div id="title"><h1></h1></div>
+<div id="title"><h1></h1><p id="titleSub">This is Frida&rsquo;s world and we all just living in it</p></div>
+<div id="credit">Made by: el Nico <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.6 7.6 3.9 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.3 0 5.6 3.1 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></div>
 <div id="press"><kbd>Enter</kbd><span id="pressText">Press Enter to begin</span></div>
 
 <div id="hud"><div id="chapter"></div><div id="objective"><span class="dia"></span><span id="objText"></span></div></div>
